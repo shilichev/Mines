@@ -1,0 +1,85 @@
+.mainZone {
+  display: flex;
+  justify-content: center;
+  background-image: url(images/1.png);
+  width: 246px;
+  height: 309px;
+  position: relative;
+  left: 35%;
+}
+.playZone {
+  background-color: white;
+  width: 220px;
+  height: 220px;
+  margin-top: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: space-around;
+  list-style: none;
+}
+.back-result-0 {
+  background-image: url(images/type0.svg);
+}
+.back-result-1 {
+  background-image: url(images/type1.svg);
+}
+.back-result-2 {
+  background-image: url(images/type2.svg);
+}
+.back-result-3 {
+  background-image: url(images/type3.svg);
+}
+.back-result-4 {
+  background-image: url(images/type4.svg);
+}
+.back-result-5 {
+  background-image: url(images/type5.svg);
+}
+.back-result-6 {
+  background-image: url(images/type6.svg);
+}
+.back-result-7 {
+  background-image: url(images/type7.svg);
+}
+.back-result-8 {
+  background-image: url(images/type8.svg);
+}
+.back-result-mine {
+  background-image: url(images/mine.svg);
+}
+.size {
+  width: 24.44px;
+  height: 24.44px;
+  background-size: 100%;
+}
+.size-face {
+  width: 38px;
+  height: 38px;
+  background-size: 100%;
+  position: absolute;
+  left: 103px;
+  top: 15px;
+}
+.closed {
+  background-image: url(images/closed.svg);
+}
+.face-main {
+  background-image: url(images/face_unpressed.svg);
+}
+.backround-timer {
+  background-image: url(images/background-timer.svg);
+  background-size: 100%;
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  top: 15px;
+}
+.nubers-left {
+  left: 18px;
+}
+.nubers-right {
+  right: 22px;
+}
