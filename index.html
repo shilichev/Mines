@@ -1,23 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link rel="stylesheet" href="styles/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   </head>
-
   <body>
-    <main>
-      <div class="mainZone">
-        <div class="face-main size-face"></div>
-        <div class="backround-timer nubers-left"></div>
-        <div class="backround-timer nubers-right"></div>
-        <div class="playZone">
-          
-        </div>
+    <div id="timer">0</div>
+    <div class="col-left">
+      <div class="settings">
+        <!--    
+            <label for="tileSize">tile size</label>
+            <input id="tileSize" type="range" min="10" max="100" step="10">    
+        -->
+        <fieldset>
+          <input
+            type="radio"
+            id="easy"
+            name="difficulty"
+            value="9"
+            class="difficulty"
+          />
+          <label for="easy">Легко</label>
+          <input
+            type="radio"
+            id="normal"
+            name="difficulty"
+            value="12"
+            class="difficulty"
+            checked
+          />
+          <label for="normal">Нормально</label>
+          <input
+            type="radio"
+            id="hard"
+            name="difficulty"
+            value="16"
+            class="difficulty"
+          />
+          <label for="hard">Сложно</label>
+        </fieldset>
       </div>
-    </main>
-    <script src="main.js"></script>
+    </div>
+    <div class="col-right">
+      <a href="#!" class="minesweeper-btn">Новая игра</a>
+    </div>
+    <div class="board-wrap">
+      <div class="board"></div>
+    </div>
+    <div class="endscreen"></div>
   </body>
+  <script type="text/javascript" src="main.js"></script>
 </html>
