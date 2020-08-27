@@ -3,8 +3,8 @@ console.clear();
 let size = 12;
 let bombFrequency = 0.2;
 let tileSize = 50;
-let firstClick = true;
 let sec = 0;
+let timerInterval;
 
 const board = document.querySelectorAll(".board")[0];
 let tiles;
@@ -31,9 +31,11 @@ let numberColors = [
 ];
 let endscreenContent = { win: "<span>YOU WON!</span>", loose: "Try again" };
 
+let firstClick = true;
 let gameOver = false;
 
 const clear = () => {
+  console.log(1);
   gameOver = false;
   bombs = [];
   numbers = [];
@@ -43,6 +45,8 @@ const clear = () => {
     tile.remove();
   });
   sec = 0;
+  clearInterval(timerInterval);
+  firstClick = true;
   setup();
 };
 
@@ -96,10 +100,6 @@ const setup = () => {
 
     tile.addEventListener("click", function (e) {
       clickTile(tile);
-      if (firstClick) {
-        init();
-        firstClick = false;
-      }
     });
   });
 
@@ -129,6 +129,10 @@ const flag = (tile) => {
 
 const clickTile = (tile) => {
   if (gameOver) return;
+  if (firstClick) {
+    init();
+    firstClick = false;
+  }
   if (
     tile.classList.contains("tile--checked") ||
     tile.classList.contains("tile--flagged")
@@ -155,7 +159,6 @@ const clickTile = (tile) => {
 };
 
 const checkTile = (tile, coordinate) => {
-  console.log("вњ”");
   let coords = coordinate.split(",");
   let x = parseInt(coords[0]);
   let y = parseInt(coords[1]);
@@ -208,6 +211,7 @@ const checkTile = (tile, coordinate) => {
 
 const endGame = (tile) => {
   console.log("Booom! Game over.");
+  clearInterval(timerInterval);
   endscreen.innerHTML = endscreenContent.loose;
   endscreen.classList.add("show");
   gameOver = true;
@@ -256,11 +260,13 @@ difficultyBtns.forEach((btn) => {
   });
 });
 function init() {
-  if (!(gameOver)) {
-    setInterval(tick, 1000);
+  if (!gameOver) {
+    sec = 0;
+    timerInterval = setInterval(tick, 1000);
   }
 }
 function tick() {
+
   sec++;
   document.getElementById("timer").childNodes[0].nodeValue = sec;
 }

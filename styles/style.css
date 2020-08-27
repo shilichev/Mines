@@ -199,4 +199,14 @@
     left: -180px;
   }
 }
+
+.timer {
+  display: block;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 40px;
+  color: red;
+  font-family: "Roboto Condensed", sans-serif;
+}
 /*# sourceMappingURL=style.css.map */
